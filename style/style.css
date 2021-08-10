@@ -1,0 +1,70 @@
+@import "./header.css";
+@import "./content.css";
+
+:root {
+  /* color */
+  --color-red: #f00;
+  --color-grey: #616161;
+  --color-dark-grey: #4d4d4d;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-yellow: #fff7d1;
+
+  /* font-size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* margine-size */
+  --margine-large: 48px;
+  --margine-medium: 28px;
+  --margine-regular: 18px;
+  --margine-small: 16px;
+  --margine-micro: 14px;
+
+  /* padding-size */
+  --padding-large: 48px;
+  --padding-medium: 28px;
+  --padding-regular: 18px;
+  --padding-small: 16px;
+  --padding-micro: 14px;
+}
+
+img {
+  width: 300px;
+  height: 170px;
+}
+
+video {
+  width: 300px;
+  height: 170px;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  height: 75%;
+  overflow-y: scroll;
+}
+
+footer {
+  height: 10%;
+  background-color: var(--color-black);
+  display: flex;
+  align-items: center;
+  color: var(--color-white);
+  justify-content: center;
+}
+
+@media screen and (min-width: 1000px) {
+  .main{
+    width: 1000px;
+    margin: auto;
+  }
+  
+}

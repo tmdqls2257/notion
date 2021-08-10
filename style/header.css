@@ -1,0 +1,21 @@
+.header {
+  height: 15%;
+  color: var(--color-red);
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.invisibleBox {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  background-color: var(--color-red);
+  border: none;
+  margin: 16px;
+  padding: 8px 16px;
+  color: var(--color-white);
+}
