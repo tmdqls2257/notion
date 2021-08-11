@@ -1,11 +1,10 @@
 
-import { BaseComponent } from "./component/basecomponent";
+import { BaseComponent } from "../component.js";
 
 
 export class PageComponent extends BaseComponent<HTMLUListElement>{
   constructor(){
     super(`<ul class="page">This is Page</ul>`);
-
   }
 } 
 

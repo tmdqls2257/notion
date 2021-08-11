@@ -5,7 +5,7 @@ export interface Component{
 
 export class BaseComponent<T extends HTMLElement> implements Component{
   protected readonly element:T;
-  constructor(HTMLstring:string, url?:string){
+  constructor(HTMLstring:string){
     const template = document.createElement('template');
     template.innerHTML = HTMLstring;
     this.element = template.content.firstChild! as T;
