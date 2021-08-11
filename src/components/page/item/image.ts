@@ -1,23 +1,21 @@
-export class ImageComponent{
-  private image: HTMLElement;
+import { BaseComponent } from '../../component';
+
+export class ImageComponent extends BaseComponent<HTMLElement>{
   constructor(title:string, url:string){
-    const template = document.createElement('template');
-    template.innerHTML= `<section class="image">
+    super(`<section class="image">
   <div class="image__holder">
     <img class="image__thumnail">
     <p class="image__title"></p>
   </div>
-</section>`;
-this.image = template.content.firstElementChild! as HTMLElement;
+</section>`);
+// 직접적으로 변수를 적용할 수 도 있지만 필요한 부분만 업데이트 해주는 것이 좋다.
 
-const imageElement = this.image.querySelector('.image__thumnail')! as HTMLImageElement;
+const imageElement = this.element.querySelector('.image__thumnail')! as HTMLImageElement;
 imageElement.src = url;
 imageElement.alt = title;
 
-const titleElemnt = this.image.querySelector('.image__title')! as HTMLElement;
+const titleElemnt = this.element.querySelector('.image__title')! as HTMLElement;
 titleElemnt.textContent = title;
   }
-  attachTo(parent: HTMLElement, position: InsertPosition = 'afterbegin') {
-    parent.insertAdjacentElement(position, this.image);
-}
+  
 }
