@@ -7,9 +7,9 @@ class App {
     constructor(appRoot) {
         this.page = new PageComponent();
         this.page.attachTo(appRoot);
-        this.image = new ImageComponent('Image', ``);
+        this.image = new ImageComponent('Image', `https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTAxMDFfMjE2%2FMDAxNjA5NDkzODQ1MjY5.FrfFUGkd9HDUGPdUWhf11hnLExfC5b822F_hPkLw-t0g.fbxA1zKVrapQOkHPOBvfAaElptvHCMj_sezSDJgQSbog.JPEG.dltmdals3785%2FIMG_1390.jpg&type=sc960_832`);
         this.image.attachTo(appRoot, 'beforeend');
-        this.video = new VideoComponent('vidoe', 'https://www.youtube.com/watch?v=7dhNQsl71yE');
+        this.video = new VideoComponent('vidoe', 'https://www.youtube.com/embed/d7CV2kjTUD4');
         this.video.attachTo(appRoot, 'beforeend');
         this.note = new NoteComponent('Hello World', 'hi');
         this.note.attachTo(appRoot, 'beforeend');
