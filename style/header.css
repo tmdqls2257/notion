@@ -7,11 +7,6 @@
   justify-content: center;
 }
 
-.invisibleBox {
-  display: flex;
-  justify-content: center;
-}
-
 .button {
   background-color: var(--color-red);
   border: none;

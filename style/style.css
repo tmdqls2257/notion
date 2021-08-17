@@ -9,6 +9,18 @@
   --color-black: #000000;
   --color-white: #ffffff;
   --color-yellow: #fff7d1;
+  --bg-main-color: #00000080;
+  --bg-accent-color: #2d2d2d;
+  --accent-color: #f64435;
+  --text-accent-color: #ffe498;
+  --text-edit-bg-color: #575757;
+  --border-color: #3f3f3f;
+  --shadow-color: #202020;
+  --document-bg-color: #68686850;
+  --component-bg-gradient: radial-gradient(circle, #646464e6 0%, #363636e6 100%);
+  --smokywhite: #dddbd8;
+  --black: #000000;
+  --translucent-black: #00000099;
 
   /* font-size */
   --font-large: 48px;
@@ -43,6 +55,7 @@ video {
 }
 
 * {
+  outline: 0;
   margin: 0;
   box-sizing: border-box;
 }
@@ -52,14 +65,7 @@ video {
   overflow-y: scroll;
 }
 
-footer {
-  height: 10%;
-  background-color: var(--color-black);
-  display: flex;
-  align-items: center;
-  color: var(--color-white);
-  justify-content: center;
-}
+
 
 @media screen and (min-width: 1000px) {
   .main{

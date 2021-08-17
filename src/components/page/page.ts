@@ -5,19 +5,27 @@ export interface Composable{
   attachChild(child:Component):void;
 }
 
+type onCloseLisnter = () => void;//그냥 닫혔다는 것만 알려주는 함수
 class PageItemComponent extends BaseComponent<HTMLElement> implements Composable{
-
+  private close ?: onCloseLisnter; //외부로 부터 전달받은 콜백함수를
   constructor(){
     super(`<li class="page-list">
     <section class="page-item"></section>
     <button class="page-item__delete">x</button>
   </li>`);
-
+  
+  const itemDelete = this.element.querySelector('.page-item__delete')! as HTMLButtonElement;
+  itemDelete.onclick = () =>{
+    this.close && this.close();
+  }
 }
 attachChild(child:Component){
   const sectionElement = this.element.querySelector('.page-item')! as HTMLElement;
   child.attachTo(sectionElement);
-  }
+}
+setOnCloseListener(listener: onCloseLisnter){
+  this.close = listener;
+}
 }
 
 export class PageComponent extends BaseComponent<HTMLUListElement> implements Composable{
@@ -28,8 +36,9 @@ export class PageComponent extends BaseComponent<HTMLUListElement> implements Co
     const UlElement = new PageItemComponent();
     UlElement.attachChild(child);
     UlElement.attachTo(this.element, 'beforeend');
-
-  }
+    UlElement.setOnCloseListener(() => {
+      UlElement.removeFrom(this.element);
+    });
 } 
-
+}
 // 페이지를 만들어 주는 역할
