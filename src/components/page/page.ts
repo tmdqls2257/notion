@@ -1,12 +1,19 @@
-
 import { BaseComponent, Component } from "../component.js";
 
 export interface Composable{
   attachChild(child:Component):void;
 }
 
+interface setOnCloseContianer extends Composable, Component{
+  setOnCloseListener(listener: onCloseLisnter):void;
+}
+
+type setOnCloseConstructor = {
+  new (): setOnCloseContianer;
+}
+
 type onCloseLisnter = () => void;//그냥 닫혔다는 것만 알려주는 함수
-class PageItemComponent extends BaseComponent<HTMLElement> implements Composable{
+export class PageItemComponent extends BaseComponent<HTMLElement> implements setOnCloseContianer{
   private close ?: onCloseLisnter; //외부로 부터 전달받은 콜백함수를
   constructor(){
     super(`<li class="page-list">
@@ -29,11 +36,11 @@ setOnCloseListener(listener: onCloseLisnter){
 }
 
 export class PageComponent extends BaseComponent<HTMLUListElement> implements Composable{
-  constructor(){
+  constructor(private pageItemConstructor:setOnCloseConstructor){
     super(`<ul class="page-ul"></ul>`);
   }
   attachChild(child:Component){
-    const UlElement = new PageItemComponent();
+    const UlElement = new this.pageItemConstructor();
     UlElement.attachChild(child);
     UlElement.attachTo(this.element, 'beforeend');
     UlElement.setOnCloseListener(() => {
