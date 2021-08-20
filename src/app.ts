@@ -1,3 +1,4 @@
+import { imageInputDialog } from './components/page/dialog/dialog.js';
 import { Component } from './components/component.js';
 import { TodoComponent } from './components/page/item/todo.js';
 import { NoteComponent } from './components/page/item/note.js';
@@ -8,6 +9,7 @@ import {Composable, PageComponent, PageItemComponent} from "./components/page/pa
 class App{
   private readonly page:Composable & Component;
   constructor(appRoot:HTMLElement){
+    
     this.page = new PageComponent(PageItemComponent);
     this.page.attachTo(appRoot);
 
@@ -22,6 +24,19 @@ class App{
 
     const todo = new TodoComponent('todoTitle', 'hello');
     this.page.attachChild(todo);
+
+    const imageAddButton = document.querySelector('.new-image')! as HTMLButtonElement;
+    imageAddButton?.addEventListener('click', () => {
+      const imageDialog = new imageInputDialog();
+      imageDialog.setOnAddListener(() => {
+        imageDialog.removeFrom(document.body);
+      });
+      imageDialog.setOnCloseListener(() => {
+        imageDialog.removeFrom(document.body);
+      });
+      imageDialog.attachTo(document.body);
+    });
+
   }
 }
 

@@ -13,6 +13,7 @@ type setOnCloseConstructor = {
 }
 
 type onCloseLisnter = () => void;//그냥 닫혔다는 것만 알려주는 함수
+
 export class PageItemComponent extends BaseComponent<HTMLElement> implements setOnCloseContianer{
   private close ?: onCloseLisnter; //외부로 부터 전달받은 콜백함수를
   constructor(){
