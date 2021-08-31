@@ -1,10 +1,10 @@
 import { BaseComponent } from "../../component.js";
-export class imageInputDialog extends BaseComponent {
+export class InputDialog extends BaseComponent {
     constructor() {
         super(`<section class="dialog">
     <button class="imageAddButton">Add</button>
-      <button class="imageCloseButton">close</button>
-  </section>`);
+    <button class="imageCloseButton">close</button>
+    </section>`);
         const imageDelete = this.element.querySelector('.imageCloseButton');
         imageDelete.onclick = () => {
             this.close && this.close();

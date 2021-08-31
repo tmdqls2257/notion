@@ -1,17 +1,19 @@
+
 import { Composable } from './../page.js';
 import { BaseComponent, Component } from "../../component.js";
 type onCloseLisenter = () => void;
 type onAddLisenter = () => void;
-export class imageInputDialog extends BaseComponent<HTMLElement> implements Composable{
+export class InputDialog extends BaseComponent<HTMLElement> implements Composable{
   private close ?: onCloseLisenter;
   private add ?: onAddLisenter;
   constructor(){
     super(`<section class="dialog">
     <button class="imageAddButton">Add</button>
-      <button class="imageCloseButton">close</button>
-  </section>`);
-
+    <button class="imageCloseButton">close</button>
+    </section>`);
+    
     const imageDelete = this.element.querySelector('.imageCloseButton')! as HTMLButtonElement;
+
     imageDelete.onclick = () =>{
       this.close && this.close();
     }

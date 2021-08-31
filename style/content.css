@@ -3,10 +3,6 @@ li {
   padding-left: 0;
 }
 
-p {
-  color: var(--smokywhite);
-}
-
 label {
   color: var(--text-accent-color);
 }

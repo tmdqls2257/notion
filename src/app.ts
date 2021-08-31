@@ -1,4 +1,4 @@
-import { imageInputDialog } from './components/page/dialog/dialog.js';
+import { InputDialog } from './components/page/dialog/dialog.js';
 import { Component } from './components/component.js';
 import { TodoComponent } from './components/page/item/todo.js';
 import { NoteComponent } from './components/page/item/note.js';
@@ -26,9 +26,11 @@ class App{
     this.page.attachChild(todo);
 
     const imageAddButton = document.querySelector('.new-image')! as HTMLButtonElement;
+    
     imageAddButton?.addEventListener('click', () => {
-      const imageDialog = new imageInputDialog();
+      const imageDialog = new InputDialog();
       imageDialog.setOnAddListener(() => {
+        
         imageDialog.removeFrom(document.body);
       });
       imageDialog.setOnCloseListener(() => {

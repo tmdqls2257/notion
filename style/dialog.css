@@ -1,0 +1,13 @@
+.dialog{
+  position:absolute;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.4em;
+  width: 32em;
+  background: var(--bg-accent-color);
+  background: var(--component-bg-gradient);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 20px var(--shadow-color);
+}
