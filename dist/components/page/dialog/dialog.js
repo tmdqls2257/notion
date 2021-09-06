@@ -2,6 +2,7 @@ import { BaseComponent } from "../../component.js";
 export class InputDialog extends BaseComponent {
     constructor() {
         super(`<section class="dialog">
+    <div id='dialog__body'><div>
     <button class="imageAddButton">Add</button>
     <button class="imageCloseButton">close</button>
     </section>`);
@@ -21,7 +22,7 @@ export class InputDialog extends BaseComponent {
         this.add = listener;
     }
     attachChild(child) {
-        const sectionElement = this.element.querySelector('.dialog');
+        const sectionElement = this.element.querySelector('#dialog__body');
         child.attachTo(sectionElement);
     }
 }

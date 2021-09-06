@@ -8,6 +8,7 @@ export class InputDialog extends BaseComponent<HTMLElement> implements Composabl
   private add ?: onAddLisenter;
   constructor(){
     super(`<section class="dialog">
+    <div id='dialog__body'><div>
     <button class="imageAddButton">Add</button>
     <button class="imageCloseButton">close</button>
     </section>`);
@@ -31,7 +32,7 @@ export class InputDialog extends BaseComponent<HTMLElement> implements Composabl
     this.add = listener;
   }
   attachChild(child:Component){
-    const sectionElement = this.element.querySelector('.dialog')! as HTMLElement;
+    const sectionElement = this.element.querySelector('#dialog__body')! as HTMLElement;
   child.attachTo(sectionElement);
   
   }

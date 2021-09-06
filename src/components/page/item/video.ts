@@ -8,7 +8,7 @@ export class VideoComponent extends BaseComponent<HTMLElement>{
     // const replaceUrl = /^.*(youtu.be\/|v\/|u\/\w\/|watch\?v=|&v=embed\/|embed\/)([^#&?]*).*/;
     const replaceUrl = /^(?:https?:\/\/)?(?:www\.)?(?:(?:youtube.com\/(?:(?:watch\?v=)|(?:embed\/))([a-zA-Z0-9-]{11}))|(?:youtu.be\/([a-zA-Z0-9-]{11})))/;
     const match = url.match(replaceUrl);
-    const videoID = match?match[1] || match[2]:null;
+    const videoID = match ? match[1] || match[2]:null;
     console.log(videoID);
     if(videoID){
       return `https://www.youtube.com/embed/${videoID}`;
