@@ -1,23 +1,23 @@
-import { BaseComponent } from "../../../component";
-export class MediaSectionInput extends BaseComponent {
+import { BaseComponent } from "../../../component.js";
+export class TextSectionInput extends BaseComponent {
     constructor() {
         super(`<div>
-    <section class="dialog">
+    <section class="form__container">
       <label for="title">Title</label>
-      <input type="text" class="dialogTitle">
+      <input type="text" class="dialogTitle" />
     </section>
-    <section class="dialog">
+    <section class="form__container">
       <label for="boy">Body</label>
-      <textarea type="text" row="3" class="dialogBody">
+      <textarea type="text" row="3" class="dialogBody"></textarea>
     </section>
   </div>`);
     }
-    get body() {
-        const element = this.element.querySelector('.dialogBody');
-        return element.value;
-    }
     get title() {
         const element = this.element.querySelector('.dialogTitle');
+        return element.value;
+    }
+    get body() {
+        const element = this.element.querySelector('.dialogBody');
         return element.value;
     }
 }
