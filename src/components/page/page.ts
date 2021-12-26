@@ -15,11 +15,12 @@ type setOnCloseConstructor = {
 
 type onCloseLisnter = () => void //그냥 닫혔다는 것만 알려주는 함수
 
+// 전달 받은 이미지나 비디오를 감싸는 컴포넌트를 만들어줍니다.
 export class PageItemComponent
   extends BaseComponent<HTMLElement>
   implements setOnCloseContianer
 {
-  private close?: onCloseLisnter //외부로 부터 전달받은 콜백함수를
+  private close?: onCloseLisnter //외부로 부터 전달받은 콜백함수
   constructor() {
     // BaseComponen.HTMLstring로 연결하여 html을 만들어줍니다.
     super(`<li class="page-list">
@@ -55,11 +56,13 @@ export class PageComponent
   constructor(private pageItemConstructor: setOnCloseConstructor) {
     super(`<ul class="page-ul"></ul>`)
   }
-  //
+  // attachChild함수를 호출하면 새로운 ul을 만들어줍니다.
   attachChild(child: Component) {
     const UlElement = new this.pageItemConstructor()
+
     UlElement.attachChild(child)
     UlElement.attachTo(this.element, 'beforeend')
+    // ul section을 지워주는 함수
     UlElement.setOnCloseListener(() => {
       UlElement.removeFrom(this.element)
     })

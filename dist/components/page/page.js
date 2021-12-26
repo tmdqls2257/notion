@@ -1,4 +1,4 @@
-import { BaseComponent } from "../component.js";
+import { BaseComponent } from '../component.js';
 export class PageItemComponent extends BaseComponent {
     constructor() {
         super(`<li class="page-list">

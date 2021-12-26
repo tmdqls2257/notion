@@ -1,4 +1,4 @@
-import { BaseComponent } from "../../component.js";
+import { BaseComponent } from '../../component.js';
 export class TodoComponent extends BaseComponent {
     constructor(title, todo) {
         super(`<section class="todo">

@@ -3,12 +3,18 @@ import { BaseComponent } from '../../component.js'
 export class VideoComponent extends BaseComponent<HTMLElement> {
   // 정규표현식(Regex)
   private convertToEmbeddedURL(url: string): string {
-    console.log(url)
     // const replaceUrl = /^.*(youtu.be\/|v\/|u\/\w\/|watch\?v=|&v=embed\/|embed\/)([^#&?]*).*/;
+
     const replaceUrl =
       /^(?:https?:\/\/)?(?:www\.)?(?:(?:youtube.com\/(?:(?:watch\?v=)|(?:embed\/))([a-zA-Z0-9-]{11}))|(?:youtu.be\/([a-zA-Z0-9-]{11})))/
+
+    // url이 유효한지 검사합니다.
+    // 일치시킬 수 있는 문자열 또는 개체를 일치시키고 해당 검색 결과를
+    // 포함하는 배열을 반환하거나 일치하는 항목이 없으면 null을 반환합니다.\
     const match = url.match(replaceUrl)
     const videoID = match ? match[1] || match[2] : null
+    console.log(match)
+
     console.log(videoID)
     if (videoID) {
       return `https://www.youtube.com/embed/${videoID}`

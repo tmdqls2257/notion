@@ -1,4 +1,4 @@
-import { BaseComponent } from "../../../component.js";
+import { BaseComponent } from '../../../component.js';
 export class TextSectionInput extends BaseComponent {
     constructor() {
         super(`<div>

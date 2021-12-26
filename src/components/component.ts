@@ -13,7 +13,7 @@ export class BaseComponent<T extends HTMLElement> implements Component {
     this.element = template.content.firstChild! as T
   }
 
-  // 삽입을 하는 것처럼 부모의 자식으로 만들어줍니다.
+  // 인자의 전달된 컨테이너 요소에 자기 자신을 붙이는 함수
   attachTo(parent: HTMLElement, position: InsertPosition = 'afterbegin') {
     parent.insertAdjacentElement(position, this.element)
   }

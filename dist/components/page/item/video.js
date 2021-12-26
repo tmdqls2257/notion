@@ -1,10 +1,10 @@
-import { BaseComponent } from "../../component.js";
+import { BaseComponent } from '../../component.js';
 export class VideoComponent extends BaseComponent {
     convertToEmbeddedURL(url) {
-        console.log(url);
         const replaceUrl = /^(?:https?:\/\/)?(?:www\.)?(?:(?:youtube.com\/(?:(?:watch\?v=)|(?:embed\/))([a-zA-Z0-9-]{11}))|(?:youtu.be\/([a-zA-Z0-9-]{11})))/;
         const match = url.match(replaceUrl);
         const videoID = match ? match[1] || match[2] : null;
+        console.log(match);
         console.log(videoID);
         if (videoID) {
             return `https://www.youtube.com/embed/${videoID}`;

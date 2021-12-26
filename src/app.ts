@@ -76,7 +76,7 @@ class App {
     InputComponet: InputComponentConstructor<T>,
     makeSection: (input: T) => Component //Input을 인자로 받아서 컴포넌트를 만드는 함수
   ) {
-    // html로 처음부터 구성하지는 않았지만
+    // 버튼을 누르면
     const AddButton = document.querySelector(selector)! as HTMLButtonElement
     AddButton.addEventListener('click', () => {
       const Dialog = new InputDialog()
