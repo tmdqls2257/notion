@@ -11,7 +11,7 @@ class App {
         this.dialogRoot = dialogRoot;
         this.page = new PageComponent(PageItemComponent);
         this.page.attachTo(appRoot);
-        const video = new VideoComponent('vidoe', 'https://www.youtube.com/embed/d7CV2kjTUD4');
+        const video = new VideoComponent('vidoe', 'https://www.youtube.com/embed/fgSXAKsq-Vo');
         this.page.attachChild(video);
         const note = new NoteComponent('Hello World', 'hi');
         this.page.attachChild(note);

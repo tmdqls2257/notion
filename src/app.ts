@@ -31,7 +31,7 @@ class App {
     // 비디오를 만들어준다.
     const video = new VideoComponent(
       'vidoe',
-      'https://www.youtube.com/embed/d7CV2kjTUD4'
+      'https://www.youtube.com/embed/fgSXAKsq-Vo'
     )
     // 가장 밑에 생기도록 해줍니다.
     this.page.attachChild(video)
@@ -76,7 +76,7 @@ class App {
     InputComponet: InputComponentConstructor<T>,
     makeSection: (input: T) => Component //Input을 인자로 받아서 컴포넌트를 만드는 함수
   ) {
-    // 버튼을 누르면
+    // 버튼을 누르면 InputDialog를
     const AddButton = document.querySelector(selector)! as HTMLButtonElement
     AddButton.addEventListener('click', () => {
       const Dialog = new InputDialog()

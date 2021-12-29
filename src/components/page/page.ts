@@ -9,6 +9,7 @@ interface setOnCloseContianer extends Composable, Component {
   setOnCloseListener(listener: onCloseLisnter): void
 }
 
+//
 type setOnCloseConstructor = {
   new (): setOnCloseContianer
 }
@@ -37,6 +38,7 @@ export class PageItemComponent
       this.close && this.close()
     }
   }
+  // section 밑에 가져온 아이템들을 붙여줍니다.
   attachChild(child: Component) {
     const sectionElement = this.element.querySelector(
       '.page-item'
